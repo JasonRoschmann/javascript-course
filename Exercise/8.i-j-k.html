@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Flip Game with localStorage and JSON</title>
+    <style>
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        #score {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="playGame('heads')">Heads</button>
+    <button onclick="playGame('tails')">Tails</button>
+
+    <div id="result"></div>
+    <div id="score"></div>
+
+    <script>
+        // Initialisierung des Spielstands aus dem localStorage oder Standardwerten
+        let gameData = JSON.parse(localStorage.getItem('gameData')) || { score: 0, wins: 0, losses: 0 };
+
+        // Funktion zur Aktualisierung und Anzeige des Spielstands
+        function updateScore() {
+            document.getElementById('score').textContent = `Score: ${gameData.score}, Wins: ${gameData.wins}, Losses: ${gameData.losses}`;
+        }
+
+        // Funktion zum Spielen des Spiels und Aktualisieren des Spielstands
+        function playGame(guess) {
+            const randomNumber = Math.random();
+            const result = randomNumber <= 0.5 ? 'heads' : 'tails';
+            const outcome = (guess === result) ? 'You win!' : 'You lose!';
+
+            // Update score
+            if (outcome === 'You win!') {
+                gameData.score++;
+                gameData.wins++;
+            } else {
+                gameData.losses++;
+            }
+
+            // Speichern des aktualisierten Spielstands in localStorage als JSON-String
+            localStorage.setItem('gameData', JSON.stringify(gameData));
+
+            // Anzeige des Ergebnisses und des aktualisierten Spielstands
+            document.getElementById('result').textContent = `Guess: ${guess}, Result: ${result}. ${outcome}`;
+            updateScore();
+
+            console.log(outcome);
+            console.log('Guess:', guess);
+            console.log('Result:', result);
+            console.log('Score:', gameData.score);
+            console.log('Wins:', gameData.wins);
+            console.log('Losses:', gameData.losses);
+        }
+
+        // Beim Laden der Seite den Spielstand initial anzeigen
+        updateScore();
+    </script>
+</body>
+</html>

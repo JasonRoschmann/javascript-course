@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    /* for while 
+    let i = 0;
+    let j = 5;
+
+    while(i < 11) {
+        console.log(i);
+        i+=2;
+    }
+
+    while(j > -1) {
+        console.log(j);
+        j--
+    }
+    
+    for(i = 0; i < 11; i +=2) {
+        console.log(i);
+    }
+
+    for(i = 5; i > -1; i--) {
+        console.log(i);
+    }
+        */
+
+        /* Add +1 in Array Numbers
+    testArray = [1, 2, 3];
+    console.log(addOne(testArray));
+
+    testArray = [-2, -1, 0, 100];
+    console.log(addOne(testArray));
+
+    function addOne(array) {
+        let resultArray = [];
+        for (let i =  0; i < array.length; i++ ) {
+            resultArray.push(array[i] + 1);
+        }
+
+        return resultArray;
+
+    }
+    */
+
+    /* add Num 
+    function addNum(array, num) {
+        // Neues Array erstellen, um die erhöhten Werte zu speichern
+        let increasedArray = [];
+        
+        // Durch jedes Element im Array iterieren
+        for (let i = 0; i < array.length; i++) {
+            // Das aktuelle Element um num erhöhen und zum neuen Array hinzufügen
+            increasedArray.push(array[i] + num);
+        }
+
+        // Das kombinierte Array zurückgeben
+        return array.concat(increasedArray);
+    }
+
+    // Testen der Funktion
+    const testArray1 = [1, 2, 3];
+    console.log(addNum(testArray1, 2)); // Ausgabe: [1, 2, 3, 3, 4, 5]
+
+    const testArray2 = [10, 20, 30];
+    console.log(addNum(testArray2, 3)); // Ausgabe: [10, 20, 30, 13, 23, 33]
+
+    const testArray3 = [0, -1, -2];
+    console.log(addNum(testArray3, 10)); // Ausgabe: [0, -1, -2, 10, 9, 8]
+
+    */
+
+    /* multiply Arrays together
+    const testArray2 = [1, 2, 3];
+    const testArray = [1 , 1, 3];
+    console.log(addArrays(testArray,testArray2)); 
+
+
+    function addArrays(array1, array2) {
+        let addedArray = [];
+
+        for(let i = 0; i < array1.length; i++) {
+            addedArray.push(array1[i] + array2[i]); 
+        }
+
+        return addedArray;
+    }
+    */
+
+      // Testen der Funktion
+      const nums1 = [1, -3, 5];
+    console.log(countPositive(nums1)); // Ausgabe: 2
+
+    const nums2 = [-1, 0, 10, -5, 8];
+    console.log(countPositive(nums2)); // Ausgabe: 3
+
+    const nums3 = [0, 0, 0, 0];
+    console.log(countPositive(nums3)); // Ausgabe: 0
+
+    
+    function countPositive(nums) {
+        // Initialisiere den Zähler für positive Zahlen
+        let count = 0;
+
+        // Iteriere durch das Array
+        for (let i = 0; i < nums.length; i++) {
+            // Überprüfe, ob die Zahl größer als 0 ist
+            if (nums[i] > 0) {
+                count++;
+            }
+        }
+
+        // Gib die Anzahl der positiven Zahlen zurück
+        return count;
+    }
+</script>
+
+
+</script>
+</html>

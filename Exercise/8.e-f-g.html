@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+/*
+        function isSameProduct(product1, product2) {
+            return product1.name === product2.name && product1.price === product2.price;
+        }
+
+        let product1 = {
+            name: 'Football',
+            price: 1000
+        };
+
+        let product2 = {
+            name: 'Football',
+            price: 1000
+        }
+
+        let product3 = {
+            name: 'Basketball',
+            price: 1000
+        }
+
+        
+
+        console.log(isSameProduct(product1, product2));
+
+
+//Test multiple string
+
+let str = "test";
+let repeatedStr = str.repeat(3);
+console.log(repeatedStr);
+
+*/
+
+function convertLength(length, from, to) {
+    const conversionRates = {
+        km: { miles: 1 / 1.6, feet: 3281 },
+        miles: { km: 1.6, feet: 5280 },
+        feet: { km: 1 / 3281, miles: 1 / 5280 }
+    };
+
+    if (!conversionRates[from]) {
+        return `Invalid unit: ${from}`;
+    }
+    
+    if (!conversionRates[from][to]) {
+        return `Invalid unit: ${to}`;
+    }
+
+    const convertedLength = length * conversionRates[from][to];
+    return `${length} ${from} is ${convertedLength.toFixed(2)} ${to}`;
+}
+
+// Beispielaufrufe
+const result1 = convertLength(10, 'km', 'miles');  // Ausgabe: "10 km is 6.25 miles"
+const result2 = convertLength(6.25, 'miles', 'km'); // Ausgabe: "6.25 miles is 10.00 km"
+const result3 = convertLength(5, 'km', 'feet');    // Ausgabe: "5 km is 16405.00 feet"
+const result4 = convertLength(5280, 'feet', 'miles'); // Ausgabe: "5280 feet is 1.00 miles"
+const result5 = convertLength(3281, 'feet', 'km'); // Ausgabe: "3281 feet is 1.00 km"
+const result6 = convertLength(5, 'miles', 'feet'); // Ausgabe: "5 miles is 26400.00 feet"
+const result7 = convertLength(5, 'feet', 'feet');  // Ausgabe: "Invalid unit: feet"
+const result8 = convertLength(5, 'km', 'yards');   // Ausgabe: "Invalid unit: yards"
+const result9 = convertLength(5, 'yards', 'miles'); // Ausgabe: "Invalid unit: yards"
+
+// Ergebnisse im localStorage speichern
+localStorage.setItem('Result1', result1);
+localStorage.setItem('Result2', result2);
+localStorage.setItem('Result3', result3);
+localStorage.setItem('Result4', result4);
+localStorage.setItem('Result5', result5);
+localStorage.setItem('Result6', result6);
+localStorage.setItem('Result7', result7);
+localStorage.setItem('Result8', result8);
+localStorage.setItem('Result9', result9);
+
+// Ergebnisse aus dem localStorage abrufen und anzeigen
+console.log(localStorage.getItem('Result1'));
+console.log(localStorage.getItem('Result2'));
+console.log(localStorage.getItem('Result3'));
+console.log(localStorage.getItem('Result4'));
+console.log(localStorage.getItem('Result5'));
+console.log(localStorage.getItem('Result6'));
+console.log(localStorage.getItem('Result7'));
+console.log(localStorage.getItem('Result8'));
+console.log(localStorage.getItem('Result9'));
+
+    </script>
+
+</body>
+</html>

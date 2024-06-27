@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    /* MinMax function 
+    function minMax(nums) {
+    // Überprüfen, ob das Array leer ist
+    if (nums.length === 0) {
+        return { min: null, max: null };
+    }
+
+    // Initialisiere min und max mit dem ersten Element des Arrays
+    let min = nums[0];
+    let max = nums[0];
+
+    // Iteriere durch das Array, um min und max zu finden
+    for (let i = 1; i < nums.length; i++) {
+        if (nums[i] < min) {
+            min = nums[i];
+        }
+        if (nums[i] > max) {
+            max = nums[i];
+        }
+    }
+
+    // Rückgabe eines Objekts mit min und max
+    return { min: min, max: max };
+}
+
+// Testen der Funktion
+const nums1 = [1, -3, 5];
+console.log(minMax(nums1)); // Ausgabe: { min: -3, max: 5 }
+
+const nums2 = [10, 0, -5, 8];
+console.log(minMax(nums2)); // Ausgabe: { min: -5, max: 10 }
+
+const nums3 = [];
+console.log(minMax(nums3)); // Ausgabe: { min: null, max: null }
+
+const nums4 = [1];
+console.log(minMax(nums4)); // Ausgabe: { min: 1, max: 1 }
+*/
+
+function countWords(words) {
+    // Initialisiere ein leeres Objekt, um die Wortzählungen zu speichern
+    const wordCounts = {};
+
+    // Iteriere durch das Array von Wörtern
+    for (let i = 0; i < words.length; i++) {
+        const word = words[i];
+        
+        // Wenn das Wort bereits im Objekt existiert, erhöhe die Zählung
+        if (wordCounts[word]) {
+            wordCounts[word]++;
+        } else {
+            // Andernfalls initialisiere die Zählung für das Wort mit 1
+            wordCounts[word] = 1;
+        }
+    }
+
+    // Rückgabe des Objekts mit den Wortzählungen
+    return wordCounts;
+}
+
+// Testen der Funktion
+const words1 = ['apple', 'grape', 'apple', 'apple'];
+console.log(countWords(words1)); // Ausgabe: { apple: 3, grape: 1 }
+
+const words2 = ['banana', 'banana', 'banana', 'orange'];
+console.log(countWords(words2)); // Ausgabe: { banana: 3, orange: 1 }
+
+const words3 = ['kiwi', 'kiwi', 'kiwi', 'kiwi'];
+console.log(countWords(words3)); // Ausgabe: { kiwi: 4 }
+
+const words4 = [];
+console.log(countWords(words4)); // Ausgabe: {}
+</script>
+</html>

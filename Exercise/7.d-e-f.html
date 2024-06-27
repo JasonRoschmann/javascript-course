@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+//Convert Fahrenheit to Celsius
+        function convertToFahrenheit(celsius) {
+           return (celsius * 9/5) + 32;
+        }
+
+        console.log(convertToFahrenheit(25));
+//Convert Celsius to Fahrenheit
+        function convertToCelsius(fahrenheit) {
+            return (fahrenheit -32) * 5/9;
+        }
+
+        console.log(convertToCelsius(86));
+
+//Convert Temperatur to Degrees
+function convertTemperature(degrees, unit) {
+    if (unit === 'C') {
+        const fahrenheit = convertToFahrenheit(degrees);
+        return `${degrees}°C is ${fahrenheit.toFixed(2)}°F`;
+    } else if (unit === 'F') {
+        const celsius = convertToCelsius(degrees);
+        return `${degrees}°F is ${celsius.toFixed(2)}°C`;
+    } else {
+        return 'Invalid unit';
+    }
+}
+
+// Beispielaufrufe
+console.log(convertTemperature(25, 'C'));  // Ausgabe: 77
+console.log(convertTemperature(77, 'F'));  // Ausgabe: 25
+console.log(convertTemperature(0, 'C'));   // Ausgabe: 32
+console.log(convertTemperature(32, 'F'));  // Ausgabe: 0
+console.log(convertTemperature(100, 'C')); // Ausgabe: 212
+console.log(convertTemperature(212, 'F')); // Ausgabe: 100
+console.log(convertTemperature(50, 'X'));  // Ausgabe: 'Invalid unit'
+
+    </script>
+</body>
+</html>

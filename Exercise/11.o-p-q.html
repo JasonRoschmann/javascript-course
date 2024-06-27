@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    let array1 = ['apple', 'banana', 'cherry', 'search', 'date', 'search'];
+    let searchString = 'search';
+    let  found = false;
+
+    for(let i = 0; i <= array1.length; i++) {
+        if(array1[i] === searchString) {
+            console.log(2);
+        found = true;
+        break; // Exit the loop as we found the string
+    }
+}
+
+// If the string was not found, log -1
+if (!found) {
+    console.log(-1);
+}
+
+function findIndex(array,word) {
+
+    for (let i = 0; i < array.length; i++) {
+        if(array[i] === word) {
+            return i;
+        }
+    }
+
+    return -1;
+
+}
+
+console.log(findIndex(array1, searchString)); // Output: 3
+
+let searchStringNotFound = "orange";
+console.log(findIndex(array1, searchStringNotFound)); // Output: -1
+
+
+
+
+
+</script>
+</html>

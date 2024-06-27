@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Create a function convertLength (length, from, to) that takes km or miles
+        /*
+  function convertLength(length, from, to) {
+    const conversionRate = 1.6; // 1 mile = 1.6 km
+
+    if (from === 'km' && to === 'miles') {
+        return `${length} km is ${(length / conversionRate).toFixed(2)} miles`;
+    } else if (from === 'miles' && to === 'km') {
+        return `${length} miles is ${(length * conversionRate).toFixed(2)} km`;
+    } else {
+        return 'Invalid units';
+    }
+}
+
+// Beispielaufrufe
+console.log(convertLength(10, 'km', 'miles'));  // Ausgabe: "10 km is 6.25 miles"
+console.log(convertLength(6.25, 'miles', 'km')); // Ausgabe: "6.25 miles is 10.00 km"
+console.log(convertLength(5, 'km', 'km'));       // Ausgabe: "Invalid units"
+console.log(convertLength(5, 'miles', 'miles')); // Ausgabe: "Invalid units"
+console.log(convertLength(5, 'km', 'yards'));    // Ausgabe: "Invalid units"
+ */
+
+ //Update convertLength to support converting between km,miles
+ /*
+ function convertLength(length, from, to) {
+    const conversionRates = {
+        km: { miles: 1 / 1.6, feet: 3281 },
+        miles: { km: 1.6, feet: 5280 },
+        feet: { km: 1 / 3281, miles: 1 / 5280 }
+    };
+
+    if (conversionRates[from] && conversionRates[from][to]) {
+        const convertedLength = length * conversionRates[from][to];
+        return `${length} ${from} is ${convertedLength.toFixed(2)} ${to}`;
+    } else {
+        return 'Invalid units';
+    }
+}
+
+// Beispielaufrufe
+console.log(convertLength(10, 'km', 'miles'));  // Ausgabe: "10 km is 6.25 miles"
+console.log(convertLength(6.25, 'miles', 'km')); // Ausgabe: "6.25 miles is 10.00 km"
+console.log(convertLength(5, 'km', 'feet'));    // Ausgabe: "5 km is 16405.00 feet"
+console.log(convertLength(5280, 'feet', 'miles')); // Ausgabe: "5280 feet is 1.00 miles"
+console.log(convertLength(3281, 'feet', 'km')); // Ausgabe: "3281 feet is 1.00 km"
+console.log(convertLength(5, 'miles', 'feet')); // Ausgabe: "5 miles is 26400.00 feet"
+console.log(convertLength(5, 'feet', 'feet'));  // Ausgabe: "Invalid units"
+console.log(convertLength(5, 'km', 'yards'));   // Ausgabe: "Invalid units"
+*/
+
+//Update convertLength so that if you give it an invalid unit , it will return invalid ${unit}
+function convertLength(length, from, to) {
+    const conversionRates = {
+        km: { miles: 1 / 1.6, feet: 3281 },
+        miles: { km: 1.6, feet: 5280 },
+        feet: { km: 1 / 3281, miles: 1 / 5280 }
+    };
+
+    if (!conversionRates[from]) {
+        return `Invalid unit: ${from}`;
+    }
+    
+    if (!conversionRates[from][to]) {
+        return `Invalid unit: ${to}`;
+    }
+
+    const convertedLength = length * conversionRates[from][to];
+    return `${length} ${from} is ${convertedLength.toFixed(2)} ${to}`;
+}
+
+// Beispielaufrufe
+console.log(convertLength(10, 'km', 'miles'));  // Ausgabe: "10 km is 6.25 miles"
+console.log(convertLength(6.25, 'miles', 'km')); // Ausgabe: "6.25 miles is 10.00 km"
+console.log(convertLength(5, 'km', 'feet'));    // Ausgabe: "5 km is 16405.00 feet"
+console.log(convertLength(5280, 'feet', 'miles')); // Ausgabe: "5280 feet is 1.00 miles"
+console.log(convertLength(3281, 'feet', 'km')); // Ausgabe: "3281 feet is 1.00 km"
+console.log(convertLength(5, 'miles', 'feet')); // Ausgabe: "5 miles is 26400.00 feet"
+console.log(convertLength(5, 'feet', 'feet'));  // Ausgabe: "Invalid unit: feet"
+console.log(convertLength(5, 'km', 'yards'));   // Ausgabe: "Invalid unit: yards"
+console.log(convertLength(5, 'yards', 'miles')); // Ausgabe: "Invalid unit: yards"
+
+ </script>
+</body>
+</html>

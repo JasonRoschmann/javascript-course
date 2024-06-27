@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>9a</button>
+    <button class="js-change-button">9b</button>
+
+    <button onclick="
+    choseHeads();
+    ">heads</button>
+
+    <button onclick="
+    choseTails();
+    ">tails</button>
+
+    <p id="result"></p>
+
+
+    
+
+    <script>
+// Change the button name
+    console.log(document.querySelector('button'));
+    document.querySelector('.js-change-button')
+    .innerHTML = '9b done!'
+   
+// Use DOM to Display the Result on the Website
+    function choseHeads() {
+        document.getElementById('result').innerText = "You chose: Heads";
+    }
+
+    function choseTails() {
+        document.getElementById('result').innerText = "You chose: Tails";
+    }
+       
+    
+
+    </script>
+</body>
+</html>

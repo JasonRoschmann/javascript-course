@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .amazon-button {
+            background-color: rgb(255, 216, 20);
+            color: black;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            font-family: Arial, Helvetica, sans-serif;
+            height: 35px;
+            width: 150px;
+            font-weight: bold;
+        }
+
+        .request-button {
+            border: none;
+            background-color: black;
+            font-weight: bold;
+            color: white;
+            border-radius: 5px;
+            height: 35px;
+            width: 100px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .schedule-button {
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            background-color: rgb(230, 230, 230);
+            color: black;
+            cursor: pointer;
+            height: 40px;
+            width: 150px;
+        }
+
+    </style>
+</head>
+<body>
+    
+<p>Amazon Butoon</p>
+<button class="amazon-button">Add to Cart</button>
+<br>
+<br>
+<br>
+<p>Uber buttons</p>
+<button class="request-button">Request now</button> 
+<button class="schedule-button">Schedule for later</button>
+<br>
+<br>
+<button  id ="testButton" class="js-button">TEST</button>
+
+
+
+
+</body>
+
+<script>
+
+const testButton = document.querySelector('.js-button');
+    if(testButton.classList.contains('js-button')) {
+        console.log(`The button has the class js-button.`)
+    } else {
+        console.log(`The button does not have the class js-button.`)
+    }
+</script>
+</html>

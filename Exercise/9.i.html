@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick ="
+    console.log(`Cart quantity: ${cartQuantity}`);
+    updateDisplay();
+    ">Show Quantity</button>
+
+    <button onclick="
+    cartQuantity += + 1;
+    console.log(`Cart quantity: ${cartQuantity}`);
+    updateDisplay();
+    ">Add to Cart</button>
+
+    <button onclick ="
+    cartQuantity = cartQuantity + 2;
+    console.log(`Cart quantity: ${cartQuantity}`);
+    updateDisplay();
+    ">+2</button>
+
+    <button onclick ="
+    cartQuantity = cartQuantity + 3;
+    console.log(`Cart quantity: ${cartQuantity}`);
+    updateDisplay();
+    ">+3</button>
+
+    <button onclick ="
+    cartQuantity = 0;
+    console.log(`Cart quantity: ${cartQuantity}`);
+    updateDisplay();
+    ">Reset Cart</button>
+
+    <button onclick ="
+    cartQuantity += 4;
+    console.log(`Cart quantity: ${cartQuantity}`);
+    updateDisplay();
+    ">+4</button>
+
+    <button onclick ="
+    cartQuantity += 5;
+    console.log(`Cart quantity: ${cartQuantity}`);
+    updateDisplay();
+    ">+5</button>
+
+   <button onclick="
+   cartQuantity  -= 2;
+   console.log(`cartQuantity: ${cartQuantity}`);
+   updateDisplay();
+   ">-2</button>
+
+   <button onclick="
+   cartQuantity -= 3;
+   console.log(`cartQuantity: ${cartQuantity}`);
+   updateDisplay();
+   ">-3</button>
+
+   <button onclick ="
+   cartQuantity --;
+   console.log(`Cart quantity: ${cartQuantity}`);
+   updateDisplay();
+   ">Remove</button>
+
+    <p id="displayQuantity"></p>
+
+    <script>   
+let cartQuantity = 0;
+
+function updateDisplay() {
+    document.getElementById('displayQuantity').innerText = `Cart quantity:${cartQuantity}`;
+}
+
+updateDisplay();
+
+ const name = 'jason';
+ console.log(`My name is: ${name}`);
+
+
+ let cost = (5 + 3 * 2 + 9);
+ console.log(`Cost of food:$${cost}`);
+ let tax = cost * (10/100);
+ console.log(`the Tax from the food is:$${tax}`);
+
+ console.log(`Tax(10%):$${tax}`);
+ 
+ let totalCost = cost + tax ;
+ console.log(`Total cost: $${totalCost}`);
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .is-toggled {
+        border: none;
+        background-color: black;
+        color: white;
+        font-weight: bold;
+        margin: 10px;
+        border-radius: 10px;
+        width: 100px;
+        height:35px;
+        cursor: pointer;
+    }
+
+    .js-button {
+        background-color: grey;
+        color: black;
+    }
+
+
+
+</style>
+
+<body>
+    <button class="is-toggled" onclick="toggleClass(this)">Gaming</button>
+    <button class="is-toggled" onclick="toggleClass(this)">Music</button>
+    <button class="is-toggled" onclick="toggleClass(this)">Tech</button>
+</body>
+
+<script>
+    /* Hints Button ON/OFF
+       function toggleClass(buttonElement) {
+            if (buttonElement.classList.contains('js-button')) {
+                buttonElement.classList.remove('js-button');
+            } else {
+                buttonElement.classList.add('js-button');
+            }
+        }
+        */
+
+        //Hints One Button each time 
+       function toggleClass(clickedButton) {
+        const button = document.querySelectorAll('.is-toggled');
+        button.forEach(button =>{button.classList.remove('js-button');
+
+        });
+        clickedButton.classList.add('js-button');
+       }
+</script>
+</html>

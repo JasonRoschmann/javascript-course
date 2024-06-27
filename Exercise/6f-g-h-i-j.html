@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+/*
+const randomNumber = Math.random();
+let guess = 'heads'; // Der Benutzer rät hier "heads" oder "tails"
+let result;
+
+if (randomNumber <= 0.5) {
+    result = 'heads';
+} else {
+    result = 'tails';
+}
+
+if (guess === result) {
+    console.log('You win!');
+} else {
+    console.log('You lose!');
+}
+
+console.log('Guess:', guess);
+console.log('Result:', result);
+*/
+
+const randomNumber = Math.random();
+let guess = 'heads'; // Der Benutzer rät hier "heads" oder "tails"
+
+// Bestimme das Ergebnis mit einem ternären Operator
+let result = randomNumber <= 0.5 ? 'heads' : 'tails';
+
+// Überprüfe, ob der Benutzer gewonnen hat, mit einem ternären Operator
+let outcome = (guess === result) ? 'You win!' : 'You lose!';
+
+console.log(outcome);
+console.log('Guess:', guess);
+console.log('Result:', result);
+
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>
